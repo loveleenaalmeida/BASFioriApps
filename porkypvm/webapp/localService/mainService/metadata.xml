@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZODATA_PRODUCTVOID_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="ZSAC_CUSTROLLUP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Keyname"/>
+                    <PropertyRef Name="Fieldname"/>
+                    <PropertyRef Name="Counter"/>
+                    <PropertyRef Name="Datbi"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org."/>
+                <Property Name="Keyname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Customer Rollup Key"/>
+                <Property Name="Fieldname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Target Field Name"/>
+                <Property Name="Counter" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Table Row" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Valid To" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="UseOrish" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Use Original Ship to" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InclDel" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Include Deleted Account" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sign" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Incl. / Excl." sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Operator" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Option" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Low" Type="Edm.String" Nullable="false" MaxLength="132" sap:unicode="false" sap:label="Field Value Low" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="High" Type="Edm.String" Nullable="false" MaxLength="132" sap:unicode="false" sap:label="Field Value High" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Valid From" sap:updatable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="I_SalesOrganizationType" sap:label="Sales Organization" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesOrganization"/>
+                </Key>
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="SalesOrganization_Text" sap:label="Sales Organization"/>
+                <Property Name="SalesOrganization_Text" Type="Edm.String" MaxLength="20" sap:label="Sales Organization Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesOrganizationCurrency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Statistics Currency" sap:quickinfo="Statistics currency" sap:semantics="currency-code"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code" sap:quickinfo="Company code of the sales organization"/>
+                <Property Name="IntercompanyBillingCustomer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Cust.Inter-Co.Bill." sap:quickinfo="Customer number for intercompany billing"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address"/>
+            </EntityType>
+            <EntityType Name="ZBMM_MATROLLUPVHType" sap:label="Material Rollup" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Catagory"/>
+                </Key>
+                <Property Name="Catagory" Type="Edm.String" Nullable="false" MaxLength="30" sap:text="CategoryName" sap:label="Category Key" sap:quickinfo="Category Key/ Descripton"/>
+                <Property Name="CategoryName" Type="Edm.String" MaxLength="30" sap:label="Category Key" sap:quickinfo="Category Key/ Descripton"/>
+            </EntityType>
+            <EntityType Name="ZBMM_TIMEROLLUPVHType" sap:label="Time Roll up Value Help" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Time"/>
+                    <PropertyRef Name="CompanyCode"/>
+                    <PropertyRef Name="Rundt"/>
+                </Key>
+                <Property Name="Time" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/>
+                <Property Name="Rundt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Run Date"/>
+                <Property Name="TimeText" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Field Name"/>
+                <Property Name="Cfrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date"/>
+                <Property Name="Cto" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date"/>
+                <Property Name="Pfrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date"/>
+                <Property Name="Pto" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date"/>
+            </EntityType>
+            <EntityType Name="ZBSD_VOIDMATRIXVHType" sap:label="Value Help for Void Matrix" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Keyname"/>
+                    <PropertyRef Name="Vkorg"/>
+                </Key>
+                <Property Name="Keyname" Type="Edm.String" Nullable="false" MaxLength="40" sap:text="Keynametext" sap:label="Keyname" sap:quickinfo="Customer Rollup Key"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Sales Organization"/>
+                <Property Name="Keynametext" Type="Edm.String" MaxLength="100" sap:label="Keyname Description"/>
+                <Property Name="Type" Type="Edm.String" MaxLength="15" sap:label="Type"/>
+                <Property Name="Stras" Type="Edm.String" MaxLength="50" sap:label="Street" sap:quickinfo="Comment"/>
+                <Property Name="Ort01" Type="Edm.String" MaxLength="50" sap:label="City" sap:quickinfo="Comment"/>
+                <Property Name="Regio" Type="Edm.String" MaxLength="50" sap:label="Region" sap:quickinfo="Comment"/>
+                <Property Name="Pstlz" Type="Edm.String" MaxLength="50" sap:label="Postal Code" sap:quickinfo="Comment"/>
+                <Property Name="Altkn" Type="Edm.String" MaxLength="50" sap:label="Previous Account" sap:quickinfo="Comment"/>
+                <Property Name="Storeno" Type="Edm.String" MaxLength="50" sap:label="Store No" sap:quickinfo="Comment"/>
+                <Property Name="Criticality" Type="Edm.Int32"/>
+                <Property Name="Latitude" Type="Edm.Decimal" Precision="15" Scale="12" sap:label="Latitude" sap:quickinfo="Geo location latitude"/>
+                <Property Name="Longitude" Type="Edm.Decimal" Precision="15" Scale="12" sap:label="Longitude" sap:quickinfo="Geo location longitude"/>
+            </EntityType>
+            <EntityType Name="ZRSD_PRODUCTVOIDHYRResult" sap:semantics="aggregate" sap:label="Composite - Product Void Matrix" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nodeid" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:hierarchy-node-for="Nodeid" sap:label="5 Digit Code Id"/>
+                <Property Name="Substitutable" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="Substitutable"/>
+                <Property Name="Prodh1" Type="Edm.String" MaxLength="18" sap:aggregation-role="dimension" sap:label="Product Hierarchy L1"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="Zcode" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="5 Digit Code"/>
+                <Property Name="Vkorg" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:filter-restriction="single-value" sap:label="Sales Organization" sap:value-list="standard"/>
+                <Property Name="Matrollup" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:filter-restriction="interval" sap:label="Material Rollup" sap:quickinfo="Category Key/ Descripton" sap:value-list="fixed-values"/>
+                <Property Name="Zhpr_kwertfrom" Type="Edm.Decimal" Precision="18" Scale="2" sap:aggregation-role="dimension" sap:label="Baseline-Net Sales Price Value"/>
+                <Property Name="Ntgewfrom" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="measure" sap:label="Baseline-Net Weight"/>
+                <Property Name="Shp_qtyfrom" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="dimension" sap:label="Baseline-Ship Qty"/>
+                <Property Name="Zhpr_kwertto" Type="Edm.Decimal" Precision="18" Scale="2" sap:aggregation-role="dimension" sap:label="Opportunity-Net Sales Price Value"/>
+                <Property Name="Ntgewto" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="dimension" sap:label="Opportunity-Net Weight"/>
+                <Property Name="Shp_qtyto" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="dimension" sap:label="Opportunity-Ship Qty"/>
+                <Property Name="Diffsalesvalue" Type="Edm.Decimal" Precision="18" Scale="2" sap:aggregation-role="dimension" sap:label="Difference Net Sales Price Value"/>
+                <Property Name="Diffnetwt" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="dimension" sap:label="Difference Net Weight LB"/>
+                <Property Name="Diffshpqty" Type="Edm.Decimal" Precision="13" Scale="3" sap:aggregation-role="dimension" sap:label="Difference Ship Qty"/>
+                <Property Name="Drilldownstate" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:hierarchy-drill-state-for="Nodeid"/>
+                <Property Name="Hierarchylevel" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="NonNegative" sap:hierarchy-level-for="Nodeid"/>
+                <Property Name="Parentid" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:hierarchy-parent-node-for="Nodeid"/>
+                <Property Name="Codedesc" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="5 Digit Code Description" sap:quickinfo="Characteristic Value"/>
+                <Property Name="Codesequence" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Code Sequence" sap:quickinfo="Characteristic Value"/>
+                <Property Name="Groupsequence" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Group Sequence" sap:quickinfo="Characteristic Value"/>
+                <Property Name="ProductOldID" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Old Material Number" sap:quickinfo="Characteristic Value"/>
+                <Property Name="ProductName" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Material Description" sap:quickinfo="Characteristic Value"/>
+                <Property Name="Brand" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Brand" sap:quickinfo="Characteristic Value"/>
+                <Property Name="CatalogText" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Catalog" sap:quickinfo="Characteristic Value"/>
+                <Property Name="Mobdesc" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Material Mobile Text" sap:quickinfo="Characteristic Value"/>
+                <Property Name="Frkeyname" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:filter-restriction="single-value" sap:label="Baseline" sap:quickinfo="Customer Rollup Key" sap:value-list="standard"/>
+                <Property Name="Tokeyname" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:filter-restriction="single-value" sap:label="Opportunity" sap:quickinfo="Customer Rollup Key" sap:value-list="standard"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Company Code" sap:quickinfo="Company code of the sales organization"/>
+                <Property Name="Dummy" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Dummy" sap:quickinfo="Characteristic Value"/>
+                <NavigationProperty Name="Parameters" Relationship="ZODATA_PRODUCTVOID_SRV.assoc_701A8E6537B369AAD264A2FBC43EC0E9" FromRole="ToRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9" ToRole="FromRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZRSD_PRODUCTVOIDHYRParameters" sap:semantics="parameters" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="p_vkorg"/>
+                    <PropertyRef Name="p_frkeyname"/>
+                    <PropertyRef Name="p_tokeyname"/>
+                    <PropertyRef Name="p_frdate"/>
+                    <PropertyRef Name="p_todate"/>
+                </Key>
+                <Property Name="p_vkorg" Type="Edm.String" Nullable="false" DefaultValue="3000" MaxLength="4" sap:display-format="UpperCase" sap:parameter="mandatory" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_frkeyname" Type="Edm.String" Nullable="false" MaxLength="40" sap:parameter="mandatory" sap:visible="true" sap:label="Customer Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_tokeyname" Type="Edm.String" Nullable="false" MaxLength="40" sap:parameter="mandatory" sap:label="Customer Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_frdate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory" sap:label="Current Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_todate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory" sap:label="Current Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Results" Relationship="ZODATA_PRODUCTVOID_SRV.assoc_701A8E6537B369AAD264A2FBC43EC0E9" FromRole="FromRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9" ToRole="ToRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9"/>
+            </EntityType>
+            <Association Name="assoc_701A8E6537B369AAD264A2FBC43EC0E9" sap:content-version="1">
+                <End Type="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRParameters" Multiplicity="1" Role="FromRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9"/>
+                <End Type="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult" Multiplicity="*" Role="ToRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9"/>
+            </Association>
+            <EntityContainer Name="ZODATA_PRODUCTVOID_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZSAC_CUSTROLLUPSet" EntityType="ZODATA_PRODUCTVOID_SRV.ZSAC_CUSTROLLUP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="I_SalesOrganization" EntityType="ZODATA_PRODUCTVOID_SRV.I_SalesOrganizationType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZBMM_MATROLLUPVH" EntityType="ZODATA_PRODUCTVOID_SRV.ZBMM_MATROLLUPVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZBMM_TIMEROLLUPVH" EntityType="ZODATA_PRODUCTVOID_SRV.ZBMM_TIMEROLLUPVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZBSD_VOIDMATRIXVH" EntityType="ZODATA_PRODUCTVOID_SRV.ZBSD_VOIDMATRIXVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZRSD_PRODUCTVOIDHYRResults" EntityType="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZRSD_PRODUCTVOIDHYR" EntityType="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRParameters" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_701A8E6537B369AAD264A2FBC43EC0E9" Association="ZODATA_PRODUCTVOID_SRV.assoc_701A8E6537B369AAD264A2FBC43EC0E9" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZRSD_PRODUCTVOIDHYR" Role="FromRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9"/>
+                    <End EntitySet="ZRSD_PRODUCTVOIDHYRResults" Role="ToRole_assoc_701A8E6537B369AAD264A2FBC43EC0E9"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/Vkorg" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sales Organization"/>
+                        <PropertyValue Property="CollectionPath" String="I_SalesOrganization"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Vkorg"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrganization"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrganization_Text"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrganizationCurrency"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="IntercompanyBillingCustomer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="AddressID"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/Matrollup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Material Rollup"/>
+                        <PropertyValue Property="CollectionPath" String="ZBMM_MATROLLUPVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Matrollup"/>
+                                    <PropertyValue Property="ValueListProperty" String="Catagory"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CategoryName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/Frkeyname" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for Void Matrix"/>
+                        <PropertyValue Property="CollectionPath" String="ZBSD_VOIDMATRIXVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Type"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Altkn"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Keynametext"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Stras"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Ort01"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Regio"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Pstlz"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Storeno"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Vkorg"/>
+                                    <PropertyValue Property="ValueListProperty" String="Vkorg"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Latitude"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Frkeyname"/>
+                                    <PropertyValue Property="ValueListProperty" String="Keyname"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Longitude"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/Tokeyname" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for Void Matrix"/>
+                        <PropertyValue Property="CollectionPath" String="ZBSD_VOIDMATRIXVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Type"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Altkn"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Keynametext"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Stras"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Ort01"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Regio"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Pstlz"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Storeno"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Vkorg"/>
+                                    <PropertyValue Property="ValueListProperty" String="Vkorg"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Latitude"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Tokeyname"/>
+                                    <PropertyValue Property="ValueListProperty" String="Keyname"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Longitude"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZODATA_PRODUCTVOID_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZODATA_PRODUCTVOID_SRV_Entities/ZRSD_PRODUCTVOIDHYR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>p_vkorg</PropertyPath>
+                                <PropertyPath>p_frkeyname</PropertyPath>
+                                <PropertyPath>p_tokeyname</PropertyPath>
+                                <PropertyPath>p_frdate</PropertyPath>
+                                <PropertyPath>p_todate</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>p_vkorg</PropertyPath>
+                                <PropertyPath>p_frkeyname</PropertyPath>
+                                <PropertyPath>p_tokeyname</PropertyPath>
+                                <PropertyPath>p_frdate</PropertyPath>
+                                <PropertyPath>p_todate</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZODATA_PRODUCTVOID_SRV_Entities/ZRSD_PRODUCTVOIDHYRResults" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Vkorg"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Matrollup"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Frkeyname"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Tokeyname"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/sap/ZODATA_PRODUCTVOID_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/sap/ZODATA_PRODUCTVOID_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

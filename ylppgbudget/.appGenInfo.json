@@ -1,0 +1,32 @@
+{
+  "generationParameters": {
+    "generationDate": "Wed Jan 21 2026 15:15:45 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "http://pkynj-de2app.porkyproducts.loc:8000/sap/opu/odata/sap/YLP_PGCUSTSALESPROJECT_CDS",
+    "appName": "ylppgbudget",
+    "appTitle": "PG Customer Budet",
+    "appDescription": "PG Customer Budet",
+    "appNamespace": "customer.porky",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.108.44",
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.20.1",
+    "template": "List Report Page V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "YLP_PGCUSTSALESPROJECTResults"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "None"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zodata_productvoid_srv/$metadata">
+        <edmx:Include Namespace="ZODATA_PRODUCTVOID_SRV" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zodata_productvoid_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.I_SalesOrganizationType/AddressID">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZBSD_VOIDMATRIXVHType/Criticality">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZBSD_VOIDMATRIXVHType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Type"/>
+                            <PropertyValue Property="Value" Path="Type"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Previous Account"/>
+                            <PropertyValue Property="Value" Path="Altkn"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Keyname Description"/>
+                            <PropertyValue Property="Value" Path="Keynametext"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Street"/>
+                            <PropertyValue Property="Value" Path="Stras"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="City"/>
+                            <PropertyValue Property="Value" Path="Ort01"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Regin"/>
+                            <PropertyValue Property="Value" Path="Regio"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Postal Code"/>
+                            <PropertyValue Property="Value" Path="Pstlz"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Customer Store Number"/>
+                            <PropertyValue Property="Value" Path="Storeno"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Latitude"/>
+                            <PropertyValue Property="Value" Path="Latitude"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Sales Organization"/>
+                            <PropertyValue Property="Value" Path="Vkorg"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Longitude"/>
+                            <PropertyValue Property="Value" Path="Longitude"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Keyname"/>
+                            <PropertyValue Property="Value" Path="Keyname"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/p_vkorg">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/p_frkeyname">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/p_tokeyname">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/p_frdate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/p_todate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZODATA_PRODUCTVOID_SRV.ZRSD_PRODUCTVOIDHYRResult">
+                <Annotation Term="UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Zcode"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Prodh1"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Substitutable"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="GroupBy">
+                            <Collection>
+                                <PropertyPath>Hierarchylevel</PropertyPath>
+                                <PropertyPath>Substitutable</PropertyPath>
+                                <PropertyPath>Prodh1</PropertyPath>
+                                <PropertyPath>Zcode</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="RequestAtLeast">
+                            <Collection>
+                                <PropertyPath>Hierarchylevel</PropertyPath>
+                                <PropertyPath>Zcode</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="IncludeGrandTotal" Bool="true"/>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.LineItem</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Vkorg</PropertyPath>
+                        <PropertyPath>Frkeyname</PropertyPath>
+                        <PropertyPath>Tokeyname</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

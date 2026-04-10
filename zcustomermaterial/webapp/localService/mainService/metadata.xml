@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd_a2x.zsv_r_customermaterial.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZCSD_CUSTOMERMATERIALType">
+                <Key>
+                    <PropertyRef Name="SalesOrganization"/>
+                    <PropertyRef Name="DistributionChannel"/>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="Accesskey"/>
+                </Key>
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DistributionChannel" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Accesskey" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="VendorNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="VendorSubNo" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerName" Type="Edm.String" Nullable="false" MaxLength="220"/>
+                <Property Name="CustomerCity" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="CustomerStreet" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="CustomerPostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="SalesOrganizationName" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="AddressID" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd_a2x.zsv_r_customermaterial.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="_Items" Type="Collection(com.sap.gateway.srvd_a2x.zsv_r_customermaterial.v0001.ZCSD_CUSTOMERMATERIALITEMType)" Partner="_Parent">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="ZCSD_CUSTOMERMATERIALITEMType">
+                <Key>
+                    <PropertyRef Name="SalesOrganization"/>
+                    <PropertyRef Name="DistributionChannel"/>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="Accesskey"/>
+                    <PropertyRef Name="Material"/>
+                    <PropertyRef Name="CustomerMaterial"/>
+                </Key>
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DistributionChannel" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Accesskey" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="CustomerMaterial" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="CustomerMaterialDescription" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="OldMaterial" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CustomerUPC" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="CustomerLocation" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="CustomerPack" Type="Edm.Decimal" Nullable="false" Precision="5"/>
+                <Property Name="TotalsOnlyInvoice" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="BDRSUB" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="VendorNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="VendorSubNo" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PrimaryMaterial" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IncludeBaseCost" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CustomerName" Type="Edm.String" Nullable="false" MaxLength="220"/>
+                <Property Name="CustomerStreet" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="CustomerCity" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="CustomerPostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="MaterialDescription" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="MaterialBaseUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="MaterialManufacturerPartNumber" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <NavigationProperty Name="_Parent" Type="com.sap.gateway.srvd_a2x.zsv_r_customermaterial.v0001.ZCSD_CUSTOMERMATERIALType" Nullable="false" Partner="_Items">
+                    <ReferentialConstraint Property="SalesOrganization" ReferencedProperty="SalesOrganization"/>
+                    <ReferentialConstraint Property="DistributionChannel" ReferencedProperty="DistributionChannel"/>
+                    <ReferentialConstraint Property="Customer" ReferencedProperty="Customer"/>
+                    <ReferentialConstraint Property="Accesskey" ReferencedProperty="Accesskey"/>
+                </NavigationProperty>
+            </EntityType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZCSD_CUSTOMERMATERIAL" EntityType="com.sap.gateway.srvd_a2x.zsv_r_customermaterial.v0001.ZCSD_CUSTOMERMATERIALType">
+                    <NavigationPropertyBinding Path="_Items" Target="ZCSD_CUSTOMERMATERIALITEM"/>
+                </EntitySet>
+                <EntitySet Name="ZCSD_CUSTOMERMATERIALITEM" EntityType="com.sap.gateway.srvd_a2x.zsv_r_customermaterial.v0001.ZCSD_CUSTOMERMATERIALITEMType">
+                    <NavigationPropertyBinding Path="_Parent" Target="ZCSD_CUSTOMERMATERIAL"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/SalesOrganization">
+                <Annotation Term="SAP__common.Text" Path="SalesOrganizationName"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sales Organization"/>
+                <Annotation Term="SAP__common.Heading" String="SOrg."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/DistributionChannel">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Distribution Channel"/>
+                <Annotation Term="SAP__common.Heading" String="DChl"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/Customer">
+                <Annotation Term="SAP__common.Text" Path="CustomerName"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.SemanticObject" String="Customer"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/Accesskey">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char02"/>
+                <Annotation Term="SAP__common.QuickInfo" String="General Field with Length 2, for Function Modules"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/CustomerName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Full Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/CustomerPostalCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Postal Code"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/AddressID">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Address"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/_Items">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZCSD_CUSTOMERMATERIAL">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Items"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="SalesOrganization"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DistributionChannel"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Accesskey"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerName"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerPostalCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType">
+                <Annotation Term="SAP__common.Label" String="Customer Material Record(ZKNMT)"/>
+                <Annotation Term="Communication.Contact">
+                    <Record>
+                        <PropertyValue Property="adr">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/>
+                                    <PropertyValue Property="locality" Path="CustomerCity"/>
+                                    <PropertyValue Property="street" Path="CustomerStreet"/>
+                                    <PropertyValue Property="code" Path="CustomerPostalCode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Communication.Address" Qualifier="pref">
+                    <Record>
+                        <PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/>
+                        <PropertyValue Property="locality" Path="CustomerCity"/>
+                        <PropertyValue Property="street" Path="CustomerStreet"/>
+                        <PropertyValue Property="code" Path="CustomerPostalCode"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/SalesOrganization">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sales Organization"/>
+                <Annotation Term="SAP__common.Heading" String="SOrg."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/DistributionChannel">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Distribution Channel"/>
+                <Annotation Term="SAP__common.Heading" String="DChl"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/Customer">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.SemanticObject" String="Customer"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/Accesskey">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char02"/>
+                <Annotation Term="SAP__common.QuickInfo" String="General Field with Length 2, for Function Modules"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/Material">
+                <Annotation Term="SAP__common.Text" Path="MaterialDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/CustomerMaterial">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer Material"/>
+                <Annotation Term="SAP__common.Heading" String="Customer Material Number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number Used by Customer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/OldMaterial">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Old material number"/>
+                <Annotation Term="SAP__common.Heading" String="Old material no."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/PrimaryMaterial">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Default"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/IncludeBaseCost">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Include Base Cost"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/CustomerName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Full Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/CustomerPostalCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Postal Code"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/MaterialBaseUnit">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/MaterialManufacturerPartNumber">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Mfr Part Number"/>
+                <Annotation Term="SAP__common.Heading" String="MPN"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Manufacturer Part Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType">
+                <Annotation Term="SAP__common.Label" String="Customer Material Record(ZKNMT)"/>
+                <Annotation Term="Communication.Contact">
+                    <Record/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZCSD_CUSTOMERMATERIALITEM">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="SalesOrganization"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DistributionChannel"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Accesskey"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerMaterial"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="OldMaterial"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PrimaryMaterial"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IncludeBaseCost"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerName"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerPostalCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="MaterialManufacturerPartNumber"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/CustomerCity">
+                <Annotation Term="SAP__common.Label" String="City"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/CustomerStreet">
+                <Annotation Term="SAP__common.Label" String="Street"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/LastChangedAt">
+                <Annotation Term="SAP__common.Label" String="Changed On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Local Instance Last Change Date Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALType/SalesOrganizationName">
+                <Annotation Term="SAP__common.Label" String="Sales Organization Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/CustomerMaterialDescription">
+                <Annotation Term="SAP__common.Label" String="Customer Description"/>
+                <Annotation Term="SAP__common.Heading" String="Customer's Description of Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Description of Material"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/CustomerPack">
+                <Annotation Term="SAP__common.Label" String="Pack"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/CustomerStreet">
+                <Annotation Term="SAP__common.Label" String="Street"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/CustomerCity">
+                <Annotation Term="SAP__common.Label" String="City"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/MaterialDescription">
+                <Annotation Term="SAP__common.Label" String="Material Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCSD_CUSTOMERMATERIALITEMType/LastChangedAt">
+                <Annotation Term="SAP__common.Label" String="Changed On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Local Instance Last Change Date Time"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
