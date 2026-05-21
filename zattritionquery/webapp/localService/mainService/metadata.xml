@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZC_ATTRITIONSALESQVE_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZC_ATTRITIONSALESQVEType" sap:label="Attrition Report" sap:semantics="aggregate" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="Time" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Time Rollup" sap:quickinfo="Time Rollup Key" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesLead" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="SalesLead" sap:quickinfo="Customer Number" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="CustomerHierarchy1" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Cus Hierarchy L1" sap:quickinfo="Customer Hierarchy L1" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProductHierarchy1" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="Product Hierarchy 1" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MaterialRollup" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Category Key" sap:quickinfo="Category Key/ Descripton" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MaterialRollupKey" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="Material Rollup Key" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Company Code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="RunDate" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Run Date" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+                <Property Name="RunDate_T" Type="Edm.String" MaxLength="10" sap:label="Run Date (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Currency" sap:quickinfo="Currency Key" sap:creatable="false" sap:updatable="false" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Unit of Measure" sap:quickinfo="Unit of Weight" sap:creatable="false" sap:updatable="false" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="HundredPercent" Type="Edm.Int16" sap:aggregation-role="dimension" sap:label="100%" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PercentageUoM" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="PreviousNetWeightLB" Type="Edm.Decimal" Precision="42" Scale="3" sap:aggregation-role="measure" sap:filterable="false" sap:text="PreviousNetWeightLB_F" sap:unit="UnitOfMeasure" sap:updatable="false" sap:label="Previous Net Weight LB" sap:quickinfo="Previous Net Weight" sap:creatable="false"/>
+                <Property Name="PreviousNetWeightLB_F" Type="Edm.String" MaxLength="60" sap:label="Previous Net Weight LB (Formatted)" sap:quickinfo="Previous Net Weight" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CurrentNetWeightLB" Type="Edm.Decimal" Precision="42" Scale="3" sap:aggregation-role="measure" sap:filterable="false" sap:text="CurrentNetWeightLB_F" sap:unit="UnitOfMeasure" sap:updatable="false" sap:label="Current Net Weight LB" sap:quickinfo="current Net Weight" sap:creatable="false"/>
+                <Property Name="CurrentNetWeightLB_F" Type="Edm.String" MaxLength="60" sap:label="Current Net Weight LB (Formatted)" sap:quickinfo="current Net Weight" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="PreviousNetSalesPriceValue" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="PreviousNetSalesPriceValue_F" sap:updatable="false" sap:label="PREVIOUSNETSALESPRICEVALUE" sap:creatable="false"/>
+                <Property Name="PreviousNetSalesPriceValue_F" Type="Edm.String" MaxLength="60" sap:label="PREVIOUSNETSALESPRICEVALUE (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CurrentNetSalesPriceValue" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="CurrentNetSalesPriceValue_F" sap:updatable="false" sap:label="Current Net Sales Price Value" sap:creatable="false"/>
+                <Property Name="CurrentNetSalesPriceValue_F" Type="Edm.String" MaxLength="60" sap:label="Current Net Sales Price Value (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="WeightVariance" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="WeightVariance_F" sap:updatable="false" sap:label="Weight Variance" sap:creatable="false"/>
+                <Property Name="WeightVariance_F" Type="Edm.String" MaxLength="60" sap:label="Weight Variance (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="SalesVariance" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="SalesVariance_F" sap:updatable="false" sap:label="Sales Variance" sap:creatable="false"/>
+                <Property Name="SalesVariance_F" Type="Edm.String" MaxLength="60" sap:label="Sales Variance (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="SalesVariancePercent" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="SalesVariancePercent_F" sap:updatable="false" sap:label="Sales Variance %" sap:creatable="false"/>
+                <Property Name="SalesVariancePercent_F" Type="Edm.String" MaxLength="60" sap:label="Sales Variance % (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="SalesVarianceQPercent2" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="SalesVarianceQPercent2_F" sap:updatable="false" sap:label="No label specified for select entry on position 0000000008" sap:creatable="false"/>
+                <Property Name="SalesVarianceQPercent2_F" Type="Edm.String" MaxLength="60" sap:label="No label specified for select entry on position 0000000008 (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SalesOrganization" sap:label="Sales Organization (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesOrganization_ID"/>
+                </Key>
+                <Property Name="SalesOrganization_ID" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="SalesOrganizationText" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesOrganizationText" Type="Edm.String" sap:label="Sales Organization (Description)" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="SalesOrganizationResult" sap:label="Sales Organization (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesOrganization"/>
+                </Key>
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Time" Type="Edm.String" MaxLength="10" sap:label="Time Rollup" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesLead" Type="Edm.String" MaxLength="10" sap:label="SalesLead" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CustomerHierarchy1" Type="Edm.String" MaxLength="10" sap:label="Cus Hierarchy L1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProductHierarchy1" Type="Edm.String" MaxLength="2" sap:label="Product Hierarchy 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollup" Type="Edm.String" MaxLength="30" sap:label="Category Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollupKey" Type="Edm.String" MaxLength="40" sap:label="Material Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate" Type="Edm.String" MaxLength="10" sap:text="RunDate_T" sap:label="Run Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate_T" Type="Edm.String" sap:label="Run Date (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="HundredPercent" Type="Edm.Int16" sap:label="100%" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PercentageUoM" Type="Edm.String" MaxLength="3" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="SalesLead" sap:label="SalesLead (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesLead_ID"/>
+                </Key>
+                <Property Name="SalesLead_ID" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="SalesLeadText" sap:label="SalesLead" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesLeadText" Type="Edm.String" sap:label="SalesLead (Description)" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="SalesLeadResult" sap:label="SalesLead (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesLead"/>
+                </Key>
+                <Property Name="SalesLead" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="SalesLead" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Time" Type="Edm.String" MaxLength="10" sap:label="Time Rollup" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CustomerHierarchy1" Type="Edm.String" MaxLength="10" sap:label="Cus Hierarchy L1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProductHierarchy1" Type="Edm.String" MaxLength="2" sap:label="Product Hierarchy 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollup" Type="Edm.String" MaxLength="30" sap:label="Category Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollupKey" Type="Edm.String" MaxLength="40" sap:label="Material Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate" Type="Edm.String" MaxLength="10" sap:text="RunDate_T" sap:label="Run Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate_T" Type="Edm.String" sap:label="Run Date (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="HundredPercent" Type="Edm.Int16" sap:label="100%" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PercentageUoM" Type="Edm.String" MaxLength="3" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="ShipToParty" sap:label="Ship-to Party (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ShipToParty_ID"/>
+                </Key>
+                <Property Name="ShipToParty_ID" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="ShipToPartyText" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ShipToPartyText" Type="Edm.String" sap:label="Ship-to Party (Description)" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ShipToPartyResult" sap:label="Ship-to Party (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ShipToParty"/>
+                </Key>
+                <Property Name="ShipToParty" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Time" Type="Edm.String" MaxLength="10" sap:label="Time Rollup" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesLead" Type="Edm.String" MaxLength="10" sap:label="SalesLead" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CustomerHierarchy1" Type="Edm.String" MaxLength="10" sap:label="Cus Hierarchy L1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProductHierarchy1" Type="Edm.String" MaxLength="2" sap:label="Product Hierarchy 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollup" Type="Edm.String" MaxLength="30" sap:label="Category Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollupKey" Type="Edm.String" MaxLength="40" sap:label="Material Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate" Type="Edm.String" MaxLength="10" sap:text="RunDate_T" sap:label="Run Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate_T" Type="Edm.String" sap:label="Run Date (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="HundredPercent" Type="Edm.Int16" sap:label="100%" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PercentageUoM" Type="Edm.String" MaxLength="3" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Currency" sap:label="Currency (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Currency_ID"/>
+                </Key>
+                <Property Name="Currency_ID" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="CurrencyText" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CurrencyText" Type="Edm.String" sap:label="Currency (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="CurrencyResult" sap:label="Currency (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Currency"/>
+                </Key>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Time" Type="Edm.String" MaxLength="10" sap:label="Time Rollup" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesLead" Type="Edm.String" MaxLength="10" sap:label="SalesLead" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CustomerHierarchy1" Type="Edm.String" MaxLength="10" sap:label="Cus Hierarchy L1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProductHierarchy1" Type="Edm.String" MaxLength="2" sap:label="Product Hierarchy 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollup" Type="Edm.String" MaxLength="30" sap:label="Category Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollupKey" Type="Edm.String" MaxLength="40" sap:label="Material Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate" Type="Edm.String" MaxLength="10" sap:text="RunDate_T" sap:label="Run Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate_T" Type="Edm.String" sap:label="Run Date (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="HundredPercent" Type="Edm.Int16" sap:label="100%" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PercentageUoM" Type="Edm.String" MaxLength="3" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="UnitOfMeasure" sap:label="Unit of Measure (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasure_ID"/>
+                </Key>
+                <Property Name="UnitOfMeasure_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="UnitOfMeasureText" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="UnitOfMeasureText" Type="Edm.String" sap:label="Unit of Measure (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="UnitOfMeasureResult" sap:label="Unit of Measure (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasure"/>
+                </Key>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Time" Type="Edm.String" MaxLength="10" sap:label="Time Rollup" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesLead" Type="Edm.String" MaxLength="10" sap:label="SalesLead" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CustomerHierarchy1" Type="Edm.String" MaxLength="10" sap:label="Cus Hierarchy L1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProductHierarchy1" Type="Edm.String" MaxLength="2" sap:label="Product Hierarchy 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollup" Type="Edm.String" MaxLength="30" sap:label="Category Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollupKey" Type="Edm.String" MaxLength="40" sap:label="Material Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate" Type="Edm.String" MaxLength="10" sap:text="RunDate_T" sap:label="Run Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate_T" Type="Edm.String" sap:label="Run Date (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="HundredPercent" Type="Edm.Int16" sap:label="100%" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PercentageUoM" Type="Edm.String" MaxLength="3" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="PercentageUoM" sap:label="PERCENTAGEUOM (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PercentageUoM_ID"/>
+                </Key>
+                <Property Name="PercentageUoM_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="PercentageUoMText" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="PercentageUoMText" Type="Edm.String" sap:label="PERCENTAGEUOM (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="PercentageUoMResult" sap:label="PERCENTAGEUOM (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PercentageUoM"/>
+                </Key>
+                <Property Name="PercentageUoM" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="PERCENTAGEUOM" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Time" Type="Edm.String" MaxLength="10" sap:label="Time Rollup" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesLead" Type="Edm.String" MaxLength="10" sap:label="SalesLead" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:label="Ship-to Party" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CustomerHierarchy1" Type="Edm.String" MaxLength="10" sap:label="Cus Hierarchy L1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProductHierarchy1" Type="Edm.String" MaxLength="2" sap:label="Product Hierarchy 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollup" Type="Edm.String" MaxLength="30" sap:label="Category Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialRollupKey" Type="Edm.String" MaxLength="40" sap:label="Material Rollup Key" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate" Type="Edm.String" MaxLength="10" sap:text="RunDate_T" sap:label="Run Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="RunDate_T" Type="Edm.String" sap:label="Run Date (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="HundredPercent" Type="Edm.Int16" sap:label="100%" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ODataQueryMetadata"/>
+                </Key>
+                <Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZC_ATTRITIONSALESQVE_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZC_ATTRITIONSALESQVE" EntityType="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVEType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="SalesOrganization" EntityType="ZC_ATTRITIONSALESQVE_CDS.SalesOrganization" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="SalesOrganizationResults" EntityType="ZC_ATTRITIONSALESQVE_CDS.SalesOrganizationResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="SalesLead" EntityType="ZC_ATTRITIONSALESQVE_CDS.SalesLead" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="SalesLeadResults" EntityType="ZC_ATTRITIONSALESQVE_CDS.SalesLeadResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ShipToParty" EntityType="ZC_ATTRITIONSALESQVE_CDS.ShipToParty" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ShipToPartyResults" EntityType="ZC_ATTRITIONSALESQVE_CDS.ShipToPartyResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Currency" EntityType="ZC_ATTRITIONSALESQVE_CDS.Currency" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CurrencyResults" EntityType="ZC_ATTRITIONSALESQVE_CDS.CurrencyResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="UnitOfMeasure" EntityType="ZC_ATTRITIONSALESQVE_CDS.UnitOfMeasure" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="UnitOfMeasureResults" EntityType="ZC_ATTRITIONSALESQVE_CDS.UnitOfMeasureResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="PercentageUoM" EntityType="ZC_ATTRITIONSALESQVE_CDS.PercentageUoM" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="PercentageUoMResults" EntityType="ZC_ATTRITIONSALESQVE_CDS.PercentageUoMResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="AdditionalMetadata" EntityType="ZC_ATTRITIONSALESQVE_CDS.ODataQueryAdditionalMetadata" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVEType/SalesOrganization" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sales Organization ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="SalesOrganization"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SalesOrganization"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrganization_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrganizationText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVEType/SalesLead" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="SalesLead ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="SalesLead"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SalesLead"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesLead_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesLeadText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVEType/ShipToParty" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Ship-to Party ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="ShipToParty"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ShipToParty"/>
+                                    <PropertyValue Property="ValueListProperty" String="ShipToParty_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ShipToPartyText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVEType/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Currency ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="Currency"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Currency"/>
+                                    <PropertyValue Property="ValueListProperty" String="Currency_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CurrencyText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVEType/UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="UnitOfMeasure"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UnitOfMeasure"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVEType/PercentageUoM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="PERCENTAGEUOM ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="PercentageUoM"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PercentageUoM"/>
+                                    <PropertyValue Property="ValueListProperty" String="PercentageUoM_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PercentageUoMText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_ATTRITIONSALESQVE_CDS.ZC_ATTRITIONSALESQVE_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="/sap/opu/odata/sap/ZC_ATTRITIONSALESQVE_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="/sap/opu/odata/sap/ZC_ATTRITIONSALESQVE_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
