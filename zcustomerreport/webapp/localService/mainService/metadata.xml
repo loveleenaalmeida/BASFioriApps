@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zsv_c_customerreport.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZI_CustomerReportDetailType">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="SalesOrganization"/>
+                    <PropertyRef Name="DistributionChannel"/>
+                    <PropertyRef Name="Division"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DistributionChannel" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Division" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CustPreviousMasterRecordNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="BPPeriodicAccountStatement" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="CustomerStoreNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerOrderType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="CustomerOriginalShipto" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerMPN" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerClassification" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CustomerConditionGroup2" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="StreetName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="CityName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="PostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Longitude" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="12"/>
+                <Property Name="Latitude" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="12"/>
+                <Property Name="EmailAddress" Type="Edm.String" Nullable="false" MaxLength="241"/>
+                <Property Name="IncotermsClassification" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="CustomerPaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CustomerPaymentTermsName" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="OrderCombinationIsAllowed" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CustomerGroup" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CustomerABCClassification" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CreditControlArea" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ShiptoParty" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ShiptoPartyName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="ShiptoPartyStreetName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="ShiptoPartyCity" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="ShiptoPartyPostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ShiptoPartyRegion" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="BillToParty" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="BillToPartyName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="BillToPartyStreetName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="BillToPartyCity" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="BillToPartyPostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="BillToPartyRegion" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Payer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PayerName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="PayerStreetName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="PayerCity" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="PayerPostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PayerRegion" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="SalesLead" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SalesLeadName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="SalesSupport" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SalesSupportName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Owner" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="OwnerName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="CreditAccountIsBlocked" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CustomerCreditLimitAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CreditSegmentCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="CrdtMgmtBusinessPartnerGroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CrdtMgmtBusPartnerGroupName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CreditRiskClass" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="CustomerCreditExposureAmount" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="CreditLimitUtilizationPct" Type="Edm.Decimal" Nullable="false" Precision="28" Scale="2"/>
+                <Property Name="CustomerHiearchyL1" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerHiearchyL2" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerHiearchyL3" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="hier3_name" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="hier2_name" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="hier1_name" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="LastPaymentAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="LastPaymentCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="LastPaymentPostingDate" Type="Edm.Date"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZI_CustomerReportDetail" EntityType="com.sap.gateway.srvd.zsv_c_customerreport.v0001.ZI_CustomerReportDetailType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/Customer">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KUNNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/SalesOrganization">
+                <Annotation Term="SAP__common.Label" String="Sales Organization"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="SOrg."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Sales Organization"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=VKORG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/DistributionChannel">
+                <Annotation Term="SAP__common.Label" String="Distribution Channel"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="DChl"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Distribution Channel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=VTWEG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/Division">
+                <Annotation Term="SAP__common.Label" String="Division"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Dv"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Division"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=SPART"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CompanyCode">
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Company Code"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BUKRS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustPreviousMasterRecordNumber">
+                <Annotation Term="SAP__common.Label" String="Previous A/C Number"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Pre.Ac.No."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Previous Master Record Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ALTKN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/BPPeriodicAccountStatement">
+                <Annotation Term="SAP__common.Label" String="Bank Statement"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Indicator for Periodic Account Statements"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=XAUSZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerStoreNumber">
+                <Annotation Term="SAP__common.Label" String="Store Number"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Store Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerOrderType">
+                <Annotation Term="SAP__common.Label" String="Sales Order Type"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Sales order type for order entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerOriginalShipto">
+                <Annotation Term="SAP__common.Label" String="Original Ship-to Party"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Ship-to Party"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Ship-to Party"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerMPN">
+                <Annotation Term="SAP__common.Label" String="P12 Establishment Number"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="P12 M Establishment #"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Meat Processing Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerClassification">
+                <Annotation Term="SAP__common.Label" String="Customer Classification"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Cl"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Classification"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KUKLA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerConditionGroup2">
+                <Annotation Term="SAP__common.Label" String="Account Price Group"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="CGr2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer condition group 2"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KDKG2"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/StreetName">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party Street"/>
+                <Annotation Term="SAP__common.Heading" String="Street"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=STRAS_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CityName">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party City"/>
+                <Annotation Term="SAP__common.Heading" String="City"/>
+                <Annotation Term="SAP__common.QuickInfo" String="City"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ORT01_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/PostalCode">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party Postal Code"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Postal Code"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PSTLZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/Region">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party Region"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Rg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Region (State, Province, County)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=REGIO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/Longitude">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party Longitude"/>
+                <Annotation Term="SAP__common.Heading" String="Longitude"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Geo location longitude"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/Latitude">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party Latitude"/>
+                <Annotation Term="SAP__common.Heading" String="Latitude"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Geo location latitude"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/EmailAddress">
+                <Annotation Term="SAP__common.Label" String="Sold-to Party Email Address"/>
+                <Annotation Term="SAP__common.Heading" String="E-Mail Address"/>
+                <Annotation Term="SAP__common.QuickInfo" String="E-Mail Address"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_SMTPADR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/IncotermsClassification">
+                <Annotation Term="SAP__common.Label" String="Incoterms"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="IncoT"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Incoterms (Part 1)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=INCO1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerPaymentTerms">
+                <Annotation Term="SAP__common.Label" String="Payment Terms"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Terms of Payment"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Terms of Payment Key"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZTERM"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerPaymentTermsName">
+                <Annotation Term="SAP__common.Label" String="Payment Terms Description"/>
+                <Annotation Term="SAP__common.Heading" String="Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description of terms of payment"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/OrderCombinationIsAllowed">
+                <Annotation Term="SAP__common.Label" String="Order Combination Allowed"/>
+                <Annotation Term="SAP__common.Heading" String="OrdCm"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Order Combination Indicator"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KZAZU_D"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerGroup">
+                <Annotation Term="SAP__common.Label" String="Customer Group"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="CGrp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Group"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KDGRP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerABCClassification">
+                <Annotation Term="SAP__common.Label" String="Customer ABC Classification"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Cl"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer classification (ABC analysis)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CreditControlArea">
+                <Annotation Term="SAP__common.Label" String="Credit Control Area"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="CCAr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Credit Control Area"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KKBER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/ShiptoParty">
+                <Annotation Term="SAP__common.Label" String="Ship-to Party"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of business partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/ShiptoPartyName">
+                <Annotation Term="SAP__common.Label" String="Ship-to Party Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/ShiptoPartyStreetName">
+                <Annotation Term="SAP__common.Label" String="Ship-to Party Street"/>
+                <Annotation Term="SAP__common.Heading" String="Street"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=STRAS_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/ShiptoPartyCity">
+                <Annotation Term="SAP__common.Label" String="Ship-to Party City"/>
+                <Annotation Term="SAP__common.Heading" String="City"/>
+                <Annotation Term="SAP__common.QuickInfo" String="City"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ORT01_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/ShiptoPartyPostalCode">
+                <Annotation Term="SAP__common.Label" String="Ship-to Party Postal Code"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Postal Code"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PSTLZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/ShiptoPartyRegion">
+                <Annotation Term="SAP__common.Label" String="Ship-to Party Region"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Rg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Region (State, Province, County)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=REGIO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/BillToParty">
+                <Annotation Term="SAP__common.Label" String="Bill-to Party"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of business partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/BillToPartyName">
+                <Annotation Term="SAP__common.Label" String="Bill-to Party Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/BillToPartyStreetName">
+                <Annotation Term="SAP__common.Label" String="Bill-to Party Street"/>
+                <Annotation Term="SAP__common.Heading" String="Street"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=STRAS_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/BillToPartyCity">
+                <Annotation Term="SAP__common.Label" String="Bill-to Party City"/>
+                <Annotation Term="SAP__common.Heading" String="City"/>
+                <Annotation Term="SAP__common.QuickInfo" String="City"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ORT01_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/BillToPartyPostalCode">
+                <Annotation Term="SAP__common.Label" String="Bill-to Party Postal Code"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Postal Code"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PSTLZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/BillToPartyRegion">
+                <Annotation Term="SAP__common.Label" String="Bill-to Party Region"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Rg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Region (State, Province, County)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=REGIO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/Payer">
+                <Annotation Term="SAP__common.Label" String="Payer"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of business partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/PayerName">
+                <Annotation Term="SAP__common.Label" String="Payer Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/PayerStreetName">
+                <Annotation Term="SAP__common.Label" String="Payer Street"/>
+                <Annotation Term="SAP__common.Heading" String="Street"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=STRAS_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/PayerCity">
+                <Annotation Term="SAP__common.Label" String="Payer City"/>
+                <Annotation Term="SAP__common.Heading" String="City"/>
+                <Annotation Term="SAP__common.QuickInfo" String="City"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ORT01_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/PayerPostalCode">
+                <Annotation Term="SAP__common.Label" String="Payer Postal Code"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Postal Code"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PSTLZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/PayerRegion">
+                <Annotation Term="SAP__common.Label" String="Payer Region"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Rg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Region (State, Province, County)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=REGIO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/SalesLead">
+                <Annotation Term="SAP__common.Label" String="Sales Lead"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of business partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/SalesLeadName">
+                <Annotation Term="SAP__common.Label" String="Sales Lead Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/SalesSupport">
+                <Annotation Term="SAP__common.Label" String="Sales Support"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of business partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/SalesSupportName">
+                <Annotation Term="SAP__common.Label" String="Sales Support Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/Owner">
+                <Annotation Term="SAP__common.Label" String="Owner"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of business partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/OwnerName">
+                <Annotation Term="SAP__common.Label" String="Owner Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CreditAccountIsBlocked">
+                <Annotation Term="SAP__common.Label" String="Credit Blocked"/>
+                <Annotation Term="SAP__common.Heading" String="Blocked in Cr. Mgt"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Blocked by Credit Management"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UKM_XBLOCKED"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerCreditLimitAmount">
+                <Annotation Term="SAP__common.Label" String="Customer Credit Limit"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CreditSegmentCurrency"/>
+                <Annotation Term="SAP__common.Heading" String="Credit Limit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Credit Limit"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UKM_CREDIT_LIMIT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CreditSegmentCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Customer Credit Limit Currency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Currency"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Credit Segment Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CrdtMgmtBusinessPartnerGroup">
+                <Annotation Term="SAP__common.Label" String="Credit Rep Group"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="Customer Credit Group"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Credit Group"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UKM_CRED_GROUP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CrdtMgmtBusPartnerGroupName">
+                <Annotation Term="SAP__common.Label" String="Credit Rep Group Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name of Credit Group"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Text for Credit Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CreditRiskClass">
+                <Annotation Term="SAP__common.Label" String="Credit Risk Class"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Risk Class"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Risk Class"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UKM_RISK_CLASS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerCreditExposureAmount">
+                <Annotation Term="SAP__common.Label" String="Customer Credit Exposure"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CreditSegmentCurrency"/>
+                <Annotation Term="SAP__common.Heading" String="Exposure Amount"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Credit Exposure Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CreditLimitUtilizationPct">
+                <Annotation Term="SAP__common.Label" String="Credit Limit %"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerHiearchyL1">
+                <Annotation Term="SAP__common.Label" String="CHL1"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="HgLvCust."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of the higher-level customer hierarchy"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HKUNNR_KH"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerHiearchyL2">
+                <Annotation Term="SAP__common.Label" String="CHL2"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="HgLvCust."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of the higher-level customer hierarchy"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HKUNNR_KH"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/CustomerHiearchyL3">
+                <Annotation Term="SAP__common.Label" String="CHL3"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="HgLvCust."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer number of the higher-level customer hierarchy"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HKUNNR_KH"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/hier3_name">
+                <Annotation Term="SAP__common.Label" String="CHL3 Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/hier2_name">
+                <Annotation Term="SAP__common.Label" String="CHL2 Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/hier1_name">
+                <Annotation Term="SAP__common.Label" String="CHL1 Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/LastPaymentAmount">
+                <Annotation Term="SAP__common.Label" String="Last Payment Amount"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="LastPaymentCurrency"/>
+                <Annotation Term="SAP__common.Heading" String="Amount"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/LastPaymentCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Last Payment Currency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Crcy"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WAERS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType/LastPaymentPostingDate">
+                <Annotation Term="SAP__common.Label" String="Last Payment Posting Date"/>
+                <Annotation Term="SAP__common.Heading" String="Payment On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Date of Last Payment"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_CustomerReportDetailType">
+                <Annotation Term="SAP__common.Label" String="Detail View"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="ID" String="SecGeneral"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Organizational Data"/>
+                                        <PropertyValue Property="ID" String="FGOrgData"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_OrgData"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Customer Attributes"/>
+                                        <PropertyValue Property="ID" String="FGCustAttributes"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_CustAttributes"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Partners &amp; Addresses"/>
+                            <PropertyValue Property="ID" String="SecPartners"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Sold-to Address"/>
+                                        <PropertyValue Property="ID" String="FGSoldToAddress"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_SoldToAddress"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Ship-to Party"/>
+                                        <PropertyValue Property="ID" String="FGShipTo"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_ShipTo"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Bill-to Party"/>
+                                        <PropertyValue Property="ID" String="FGBillTo"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_BillTo"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Payer"/>
+                                        <PropertyValue Property="ID" String="FGPayer"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_Payer"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Sales Representatives"/>
+                                        <PropertyValue Property="ID" String="FGSalesTeam"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_SalesTeam"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Financials &amp; Credit"/>
+                            <PropertyValue Property="ID" String="SecFinancials"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Credit Management"/>
+                                        <PropertyValue Property="ID" String="FGCredit"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_Credit"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Payment Behavior &amp; Terms"/>
+                                        <PropertyValue Property="ID" String="FGPayment"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_Payment"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Customer Hierarchy"/>
+                            <PropertyValue Property="ID" String="SecHierarchy"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Hierarchy Levels"/>
+                                        <PropertyValue Property="ID" String="FGHierarchy"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FG_Hierarchy"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_BillTo">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BillToParty"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BillToPartyName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BillToPartyStreetName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BillToPartyCity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BillToPartyPostalCode"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BillToPartyRegion"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_Credit">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreditAccountIsBlocked"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreditControlArea"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CrdtMgmtBusinessPartnerGroup"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CrdtMgmtBusPartnerGroupName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreditRiskClass"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerCreditLimitAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerCreditExposureAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreditSegmentCurrency"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreditLimitUtilizationPct"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_CustAttributes">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustPreviousMasterRecordNumber"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BPPeriodicAccountStatement"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerStoreNumber"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerOrderType"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerOriginalShipto"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerMPN"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerClassification"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerConditionGroup2"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerGroup"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerABCClassification"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_Hierarchy">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerHiearchyL1"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="hier1_name"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerHiearchyL2"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="hier2_name"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerHiearchyL3"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="hier3_name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_OrgData">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="SalesOrganization"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="DistributionChannel"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Division"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CompanyCode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_Payer">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Payer"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PayerName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PayerStreetName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PayerCity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PayerPostalCode"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PayerRegion"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_Payment">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="IncotermsClassification"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerPaymentTerms"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CustomerPaymentTermsName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="OrderCombinationIsAllowed"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastPaymentAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastPaymentCurrency"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastPaymentPostingDate"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_SalesTeam">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="SalesLead"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="SalesLeadName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="SalesSupport"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="SalesSupportName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Owner"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="OwnerName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_ShipTo">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ShiptoParty"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ShiptoPartyName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ShiptoPartyStreetName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ShiptoPartyCity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ShiptoPartyPostalCode"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ShiptoPartyRegion"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FG_SoldToAddress">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="StreetName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CityName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PostalCode"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Region"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="EmailAddress"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Longitude"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Latitude"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Sold-to Party"/>
+                        <PropertyValue Property="TypeNamePlural" String="Sold-to Parties"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="Customer"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="SalesOrganization"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="SalesOrganization"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="DistributionChannel"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Division"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>SalesOrganization</PropertyPath>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                        <PropertyPath>Customer</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Communication.Contact">
+                    <Record>
+                        <PropertyValue Property="adr">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/>
+                                    <PropertyValue Property="street" Path="StreetName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Communication.Address" Qualifier="pref">
+                    <Record>
+                        <PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/>
+                        <PropertyValue Property="street" Path="StreetName"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZI_CustomerReportDetail">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="EmailAddress"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerCreditLimitAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerCreditExposureAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="LastPaymentAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="TextDirectionLayout" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="UploadToFileShare" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

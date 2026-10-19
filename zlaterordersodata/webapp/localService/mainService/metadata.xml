@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZODATA_LATEORDERS_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZCXA_USERDEFAULTType" sap:label="Consumption View for User Default" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="parid"/>
+                </Key>
+                <Property Name="parid" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Parameter ID" sap:quickinfo="Set/Get parameter ID"/>
+                <Property Name="bname" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="User" sap:quickinfo="User Name in User Master Record"/>
+                <Property Name="parva" Type="Edm.String" MaxLength="40" sap:label="Parameter value"/>
+            </EntityType>
+            <EntityType Name="ZC_ORDERCUTOFFQV1Result" sap:semantics="aggregate" sap:label="Late Orders" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesDocument" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Sales Document"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Creation Date" sap:quickinfo="Record Created On"/>
+                <Property Name="CreationTime" Type="Edm.Time" Precision="0" sap:aggregation-role="dimension" sap:label="Creation Time" sap:quickinfo="Time at Which Record Was Created"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Sales Organization"/>
+                <Property Name="DistributionChannel" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Distribution Channel"/>
+                <Property Name="OrganizationDivision" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Division"/>
+                <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:text="SoldToPartyName" sap:label="Sold To Party" sap:quickinfo="Sold-to Party"/>
+                <Property Name="RequestedDeliveryDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Delivery Date" sap:quickinfo="Requested Delivery Date"/>
+                <Property Name="Route" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension" sap:label="Route"/>
+                <Property Name="NextDayDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Next Delivery Date"/>
+                <Property Name="Counter" Type="Edm.Decimal" Precision="10" Scale="0" sap:aggregation-role="measure" sap:label="Counter" sap:filterable="false"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="ShipToPartyName" sap:label="Ship To Party"/>
+                <Property Name="ShipToPartyName" Type="Edm.String" MaxLength="80" sap:label="Ship To Party Name" sap:quickinfo="Name of Customer"/>
+                <Property Name="SalesLead" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="SalesLeadName" sap:label="SalesLead"/>
+                <Property Name="SalesLeadName" Type="Edm.String" MaxLength="80" sap:label="SalesLead Name" sap:quickinfo="Name of Customer"/>
+                <Property Name="SoldToPartyName" Type="Edm.String" MaxLength="80" sap:label="Sold To Party Name" sap:quickinfo="Name of Customer"/>
+                <NavigationProperty Name="Parameters" Relationship="ZODATA_LATEORDERS_SRV.assoc_975A7A15C81E3BBED10E835905BA901B" FromRole="ToRole_assoc_975A7A15C81E3BBED10E835905BA901B" ToRole="FromRole_assoc_975A7A15C81E3BBED10E835905BA901B" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZC_ORDERCUTOFFQV1Parameters" sap:semantics="parameters" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="p_vkorg"/>
+                    <PropertyRef Name="p_CutoffTime"/>
+                    <PropertyRef Name="p_FromDate"/>
+                    <PropertyRef Name="p_ToDate"/>
+                </Key>
+                <Property Name="p_vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:parameter="mandatory" sap:label="Sales Organization" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_CutoffTime" Type="Edm.Time" Nullable="false" DefaultValue="PT22H30M00S" Precision="0" sap:parameter="mandatory" sap:label="Cutoff Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_FromDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory" sap:label="From Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_ToDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory" sap:label="To Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Results" Relationship="ZODATA_LATEORDERS_SRV.assoc_975A7A15C81E3BBED10E835905BA901B" FromRole="FromRole_assoc_975A7A15C81E3BBED10E835905BA901B" ToRole="ToRole_assoc_975A7A15C81E3BBED10E835905BA901B"/>
+            </EntityType>
+            <Association Name="assoc_975A7A15C81E3BBED10E835905BA901B" sap:content-version="1">
+                <End Type="ZODATA_LATEORDERS_SRV.ZC_ORDERCUTOFFQV1Parameters" Multiplicity="1" Role="FromRole_assoc_975A7A15C81E3BBED10E835905BA901B"/>
+                <End Type="ZODATA_LATEORDERS_SRV.ZC_ORDERCUTOFFQV1Result" Multiplicity="*" Role="ToRole_assoc_975A7A15C81E3BBED10E835905BA901B"/>
+            </Association>
+            <EntityContainer Name="ZODATA_LATEORDERS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZCXA_USERDEFAULT" EntityType="ZODATA_LATEORDERS_SRV.ZCXA_USERDEFAULTType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZC_ORDERCUTOFFQV1Results" EntityType="ZODATA_LATEORDERS_SRV.ZC_ORDERCUTOFFQV1Result" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZC_ORDERCUTOFFQV1" EntityType="ZODATA_LATEORDERS_SRV.ZC_ORDERCUTOFFQV1Parameters" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_975A7A15C81E3BBED10E835905BA901B" Association="ZODATA_LATEORDERS_SRV.assoc_975A7A15C81E3BBED10E835905BA901B" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_ORDERCUTOFFQV1" Role="FromRole_assoc_975A7A15C81E3BBED10E835905BA901B"/>
+                    <End EntitySet="ZC_ORDERCUTOFFQV1Results" Role="ToRole_assoc_975A7A15C81E3BBED10E835905BA901B"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="ZODATA_LATEORDERS_SRV.ZODATA_LATEORDERS_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZODATA_LATEORDERS_SRV.ZODATA_LATEORDERS_SRV_Entities/ZC_ORDERCUTOFFQV1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>p_vkorg</PropertyPath>
+                                <PropertyPath>p_CutoffTime</PropertyPath>
+                                <PropertyPath>p_FromDate</PropertyPath>
+                                <PropertyPath>p_ToDate</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>p_vkorg</PropertyPath>
+                                <PropertyPath>p_CutoffTime</PropertyPath>
+                                <PropertyPath>p_FromDate</PropertyPath>
+                                <PropertyPath>p_ToDate</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZODATA_LATEORDERS_SRV.ZODATA_LATEORDERS_SRV_Entities/ZC_ORDERCUTOFFQV1Results" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>Counter</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZODATA_LATEORDERS_SRV.ZODATA_LATEORDERS_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="/sap/opu/odata/sap/ZODATA_LATEORDERS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="/sap/opu/odata/sap/ZODATA_LATEORDERS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

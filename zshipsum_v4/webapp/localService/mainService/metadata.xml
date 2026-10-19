@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zsv_shipmentblotter.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZC_ShipmentBlotterType">
+                <Key>
+                    <PropertyRef Name="NodeId"/>
+                </Key>
+                <Property Name="NodeId" Type="Edm.String" Nullable="false" MaxLength="13"/>
+                <Property Name="ParentId" Type="Edm.String" Nullable="false" MaxLength="13"/>
+                <Property Name="NodeType" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NodeOrder" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="Shipment" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Stop" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Route" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="Driver" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Vehicle" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Trailer" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="LastStop" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="LastStopTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="PlannedStartDate" Type="Edm.Date"/>
+                <Property Name="PlannedStartTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Timeprinted" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="ActualStartTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="ActualEndTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="TransportPlanningPoint" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ShipmentCompleted" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="ActualEndtDate" Type="Edm.Date"/>
+                <Property Name="ActualStartDate" Type="Edm.Date"/>
+                <Property Name="ActualCheckinDate" Type="Edm.Date"/>
+                <Property Name="ActualCheckinTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="ActualCases" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
+                <Property Name="ActualEaches" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
+                <Property Name="ActualOthers" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
+                <Property Name="NetWeight" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
+                <Property Name="NumberOfStops" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Delivery" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ShipToParty" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Shiptoname" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Shiptostreet" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Shiptocity" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="Shiptotelephone" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="Shiptopostalcode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="__HierarchyPropertiesForZH_SHIPMENTBLOTTER" Type="com.sap.gateway.srvd.zsv_shipmentblotter.v0001.HierarchyPropertiesForZH_SHIPMENTBLOTTER"/>
+                <NavigationProperty Name="_Parent" Type="com.sap.gateway.srvd.zsv_shipmentblotter.v0001.ZC_ShipmentBlotterType"/>
+            </EntityType>
+            <ComplexType Name="HierarchyPropertiesForZH_SHIPMENTBLOTTER">
+                <Property Name="NodeId" Type="Edm.String" Nullable="false"/>
+                <Property Name="DescendantCount" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="LimitedDescendantCount" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="DrillState" Type="Edm.String" Nullable="false"/>
+                <Property Name="DistanceFromRoot" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="LimitedRank" Type="Edm.Int64" Nullable="false"/>
+            </ComplexType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZC_ShipmentBlotter" EntityType="com.sap.gateway.srvd.zsv_shipmentblotter.v0001.ZC_ShipmentBlotterType">
+                    <NavigationPropertyBinding Path="_Parent" Target="ZC_ShipmentBlotter"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Shipment">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Shipment Number"/>
+                <Annotation Term="SAP__common.Heading" String="Shipment"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=TKNUM"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Route">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Shipment Route"/>
+                <Annotation Term="SAP__common.Heading" String="Route"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Shipment route"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ROUTR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Driver">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Driver 1"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FDSD%2FRP_DRIVER1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Vehicle">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Vehicle"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Trailer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Trailer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/LastStop">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Stage of transp.no."/>
+                <Annotation Term="SAP__common.Heading" String="STNo"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stage of transport number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/TransportPlanningPoint">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="TransportPlanningPt"/>
+                <Annotation Term="SAP__common.Heading" String="TPPt"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Transportation planning point"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=TPLST"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ShipToParty">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KUNNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Shiptopostalcode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Postal Code"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PSTLZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/__HierarchyPropertiesForZH_SHIPMENTBLOTTER">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_ShipmentBlotter">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Parent"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__HierarchyPropertiesForZH_SHIPMENTBLOTTER</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__HierarchyPropertiesForZH_SHIPMENTBLOTTER</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_Parent</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__hierarchy.RecursiveHierarchySupported" Qualifier="ZH_SHIPMENTBLOTTER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType">
+                <Annotation Term="SAP__common.Label" String="Shipment Blotter"/>
+                <Annotation Term="SAP__hierarchy.RecursiveHierarchyActions" Qualifier="ZH_SHIPMENTBLOTTER">
+                    <Record>
+                        <PropertyValue Property="ChangeSiblingForRootsSupported" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>filter</String>
+                                <String>orderby</String>
+                                <String>ancestors</String>
+                                <String>descendants</String>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="NodeId"/>
+                            <PropertyValue Property="Value" Path="NodeId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ParentId"/>
+                            <PropertyValue Property="Value" Path="ParentId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="NodeType"/>
+                            <PropertyValue Property="Value" Path="NodeType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="NodeOrder"/>
+                            <PropertyValue Property="Value" Path="NodeOrder"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shipment"/>
+                            <PropertyValue Property="Value" Path="Shipment"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Stop"/>
+                            <PropertyValue Property="Value" Path="Stop"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Route"/>
+                            <PropertyValue Property="Value" Path="Route"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Driver"/>
+                            <PropertyValue Property="Value" Path="Driver"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Vehicle"/>
+                            <PropertyValue Property="Value" Path="Vehicle"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Trailer"/>
+                            <PropertyValue Property="Value" Path="Trailer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Last Stop"/>
+                            <PropertyValue Property="Value" Path="LastStop"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Last Stop Time"/>
+                            <PropertyValue Property="Value" Path="LastStopTime"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Planned Start Date"/>
+                            <PropertyValue Property="Value" Path="PlannedStartDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Planned Start Time"/>
+                            <PropertyValue Property="Value" Path="PlannedStartTime"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Time printed"/>
+                            <PropertyValue Property="Value" Path="Timeprinted"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Start Time"/>
+                            <PropertyValue Property="Value" Path="ActualStartTime"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual End Time"/>
+                            <PropertyValue Property="Value" Path="ActualEndTime"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Transport Planning Point"/>
+                            <PropertyValue Property="Value" Path="TransportPlanningPoint"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Shipment Completed"/>
+                            <PropertyValue Property="Value" Path="ShipmentCompleted"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Endt Date"/>
+                            <PropertyValue Property="Value" Path="ActualEndtDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Start Date"/>
+                            <PropertyValue Property="Value" Path="ActualStartDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Checkin Date"/>
+                            <PropertyValue Property="Value" Path="ActualCheckinDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Checkin Time"/>
+                            <PropertyValue Property="Value" Path="ActualCheckinTime"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Cases"/>
+                            <PropertyValue Property="Value" Path="ActualCases"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Eaches"/>
+                            <PropertyValue Property="Value" Path="ActualEaches"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Others"/>
+                            <PropertyValue Property="Value" Path="ActualOthers"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Net Weight"/>
+                            <PropertyValue Property="Value" Path="NetWeight"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Number Of Stops"/>
+                            <PropertyValue Property="Value" Path="NumberOfStops"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Delivery"/>
+                            <PropertyValue Property="Value" Path="Delivery"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Ship-To Party"/>
+                            <PropertyValue Property="Value" Path="ShipToParty"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Ship-To Name"/>
+                            <PropertyValue Property="Value" Path="Shiptoname"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Ship-To Street"/>
+                            <PropertyValue Property="Value" Path="Shiptostreet"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Ship-To City"/>
+                            <PropertyValue Property="Value" Path="Shiptocity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Ship-To Telephone"/>
+                            <PropertyValue Property="Value" Path="Shiptotelephone"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Ship-To Postal"/>
+                            <PropertyValue Property="Value" Path="Shiptopostalcode"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.RecursiveHierarchy" Qualifier="ZH_SHIPMENTBLOTTER">
+                    <Record>
+                        <PropertyValue Property="NodeProperty" PropertyPath="__HierarchyPropertiesForZH_SHIPMENTBLOTTER/NodeId"/>
+                        <PropertyValue Property="ParentNavigationProperty" NavigationPropertyPath="_Parent"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__hierarchy.RecursiveHierarchy" Qualifier="ZH_SHIPMENTBLOTTER">
+                    <Record>
+                        <PropertyValue Property="ChildCount">
+                            <Null/>
+                        </PropertyValue>
+                        <PropertyValue Property="DescendantCount" Path="__HierarchyPropertiesForZH_SHIPMENTBLOTTER/DescendantCount"/>
+                        <PropertyValue Property="ExternalKey">
+                            <Null/>
+                        </PropertyValue>
+                        <PropertyValue Property="LimitedDescendantCount" Path="__HierarchyPropertiesForZH_SHIPMENTBLOTTER/LimitedDescendantCount"/>
+                        <PropertyValue Property="DistanceFromRoot" Path="__HierarchyPropertiesForZH_SHIPMENTBLOTTER/DistanceFromRoot"/>
+                        <PropertyValue Property="DrillState" Path="__HierarchyPropertiesForZH_SHIPMENTBLOTTER/DrillState"/>
+                        <PropertyValue Property="MatchedDescendantCount">
+                            <Null/>
+                        </PropertyValue>
+                        <PropertyValue Property="Matched">
+                            <Null/>
+                        </PropertyValue>
+                        <PropertyValue Property="NodeType">
+                            <Null/>
+                        </PropertyValue>
+                        <PropertyValue Property="SiblingRank">
+                            <Null/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="TextDirectionLayout" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="UploadToFileShare" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/NodeId">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ParentId">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/NodeType">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/NodeOrder">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/LastStopTime">
+                <Annotation Term="SAP__common.Label" String="Stg: ActShipEndTime"/>
+                <Annotation Term="SAP__common.Heading" String="AcShET"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stage: Actual shipment end time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UATENDS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/PlannedStartDate">
+                <Annotation Term="SAP__common.Label" String="PlannedShipmntStart"/>
+                <Annotation Term="SAP__common.Heading" String="PlanShipSt"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Planned date for start of shipment"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DPTBG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/PlannedStartTime">
+                <Annotation Term="SAP__common.Label" String="PlandTransStrtTime"/>
+                <Annotation Term="SAP__common.Heading" String="PlTrST"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Planned transport start time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UPTBG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Timeprinted">
+                <Annotation Term="SAP__common.Label" String="ActTranspProcTime"/>
+                <Annotation Term="SAP__common.Heading" String="TimeTrPr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Time of transportation processing"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UZABF"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ActualStartTime">
+                <Annotation Term="SAP__common.Label" String="ActTranspStartTime"/>
+                <Annotation Term="SAP__common.Heading" String="AcTrST"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Actual transport start time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UATBG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ActualEndTime">
+                <Annotation Term="SAP__common.Label" String="Act.shipmnt end time"/>
+                <Annotation Term="SAP__common.Heading" String="AcShET"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Actual shipment end time"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UATEND"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ActualEndtDate">
+                <Annotation Term="SAP__common.Label" String="ActualShipmentEnd"/>
+                <Annotation Term="SAP__common.Heading" String="ActShipEnd"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Actual Date for End of Shipment"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DATEND"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ActualStartDate">
+                <Annotation Term="SAP__common.Label" String="CurrShipmentStart"/>
+                <Annotation Term="SAP__common.Heading" String="CurrShipSt"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Current date for start of shipment"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DATBG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ActualCheckinDate">
+                <Annotation Term="SAP__common.Label" String="Actual check-in date"/>
+                <Annotation Term="SAP__common.Heading" String="ActDteChIn"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Actual date of check-in"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DAREG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/ActualCheckinTime">
+                <Annotation Term="SAP__common.Label" String="Act. check-in time"/>
+                <Annotation Term="SAP__common.Heading" String="CurTmChI"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Current time of check-in"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=UAREG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Shiptoname">
+                <Annotation Term="SAP__common.Label" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Shiptostreet">
+                <Annotation Term="SAP__common.Label" String="Street and House No."/>
+                <Annotation Term="SAP__common.Heading" String="Street and House Number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=STRAS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Shiptocity">
+                <Annotation Term="SAP__common.Label" String="City"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ORT01"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_ShipmentBlotterType/Shiptotelephone">
+                <Annotation Term="SAP__common.Label" String="Telephone 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="First telephone number"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

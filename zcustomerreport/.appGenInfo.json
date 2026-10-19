@@ -1,0 +1,29 @@
+{
+  "generationParameters": {
+    "generationDate": "Thu Oct 01 2026 13:30:44 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "http://pkytx-devapp.porkyproducts.loc:8000/sap/opu/odata4/sap/zsb_c_customerreport/srvd/sap/zsv_c_customerreport/0001/",
+    "appName": "zcustomerreport",
+    "appTitle": "Customer Report",
+    "appDescription": "Customer Report",
+    "appNamespace": "customer.porky",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.136.16",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.33.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "ZI_CustomerReportDetail"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```",
+    "valueHelpDownloaded": true
+  }
+}
